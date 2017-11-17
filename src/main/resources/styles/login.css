@@ -1,0 +1,23 @@
+/*Login Screen Style Sheet*/
+.loginanchor {
+    -fx-background-color:#3f3139;
+}
+
+.STOCK {
+    -fx-text-fill:#e4e3e0 ;
+    -fx-font-size:40px;
+    
+}
+
+.STOCKy {
+    -fx-text-fill:#dccebe;
+    -fx-font-size:30px;
+}
+
+.txt {
+    -fx-text-fill:#dccebe;
+}
+
+.navbtn {
+    -fx-text-fill:#e4e3e0 ;
+}
