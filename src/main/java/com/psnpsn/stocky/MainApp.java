@@ -11,13 +11,17 @@ import com.psnpsn.stocky.service.MagasinService;
 import com.psnpsn.stocky.service.ProduitService;
 import com.psnpsn.stocky.service.UserService;
 import com.psnpsn.stocky.utils.AppConfig;
+import java.net.URL;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScans;
@@ -27,17 +31,36 @@ import org.springframework.context.annotation.ComponentScans;
       @ComponentScan("com.psnpsn.stocky.service") 
     })
 public class MainApp extends Application {
+     
+    public static double xOffset = 0;
+    public static double yOffset = 0;
+    private static final BorderPane root = new BorderPane();
+    public static Stage stage;
+    
+    public static BorderPane getRoot() {
+        return root;
+    }
+    
+    
 
     @Override
-    public void start(Stage stage) throws Exception {
-//        Parent root = FXMLLoader.load(getClass().getResource("/fxml/Scene.fxml"));
-//        
-//        Scene scene = new Scene(root);
-//        scene.getStylesheets().add("/styles/Styles.css");
-//        
-//        stage.setTitle("JavaFX and Maven");
-//        stage.setScene(scene);
-//        stage.show();
+    public void start(Stage primaryStage) throws Exception {
+        
+        stage=primaryStage;
+        
+        primaryStage.initStyle(StageStyle.UNDECORATED);
+        root.setStyle("-fx-border-style:solid solid solid solid");
+        root.setStyle("-fx-border-color:grey");
+        
+        URL content = getClass().getResource("/fxml/login.fxml");
+        AnchorPane middle = FXMLLoader.load(content);
+        root.setCenter(middle);
+        
+        Scene scene = new Scene(root,1200,780);
+        
+        primaryStage.setTitle("STOCKY");
+        primaryStage.setScene(scene);
+        primaryStage.show();
 
 
     }
@@ -53,25 +76,25 @@ public class MainApp extends Application {
     
    
     public static void main(String[] args) {
-//        launch(args);
-        AnnotationConfigApplicationContext context = 
-            new AnnotationConfigApplicationContext(AppConfig.class);
-
-      FournisseurService fournService = context.getBean(FournisseurService.class);
-      UserService usrService = context.getBean(UserService.class);
-      ProduitService prdService = context.getBean(ProduitService.class);
-      CategoriePrdService ctgService = context.getBean(CategoriePrdService.class);
-      MagasinService magService = context.getBean(MagasinService.class);
-      
-      Fournisseur F = fournService.find(28);
-      CategoriePrd C = ctgService.find(37);
-      Magasin M = magService.find(41);
-      System.out.println(""+F.getNom());
-      
-      Produit P = prdService.find(54);
-      System.out.println(""+P.getFourn().getId());
-      System.out.println(""+P.getFourn().getId());
-      System.out.println(""+P.getFourn().getId());
+        launch(args);
+//        AnnotationConfigApplicationContext context = 
+//            new AnnotationConfigApplicationContext(AppConfig.class);
+//
+//      FournisseurService fournService = context.getBean(FournisseurService.class);
+//      UserService usrService = context.getBean(UserService.class);
+//      ProduitService prdService = context.getBean(ProduitService.class);
+//      CategoriePrdService ctgService = context.getBean(CategoriePrdService.class);
+//      MagasinService magService = context.getBean(MagasinService.class);
+//      
+//      Fournisseur F = fournService.find(28);
+//      CategoriePrd C = ctgService.find(37);
+//      Magasin M = magService.find(41);
+//      System.out.println(""+F.getNom());
+//      
+//      Produit P = prdService.find(54);
+//      System.out.println(""+P.getFourn().getId());
+//      System.out.println(""+P.getFourn().getId());
+//      System.out.println(""+P.getFourn().getId());
       
 //      fournService.create(new Fournisseur("FAT7I","Napoli, BennaRus",2234,"BennaCity","Tungland",9981232,9928222,"fat7ici@ftou7x.com"));
 //      usrService.create(new User("USER","USER",0) );

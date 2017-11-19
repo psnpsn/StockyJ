@@ -47,7 +47,7 @@ public class AppConfig {
    @Bean
    public DataSource getDataSource() {
       PGSimpleDataSource dataSource = new PGSimpleDataSource();
-      dataSource.setServerName( "localhost" );  // The value `localhost` means the Postgres cluster running locally on the same machine.
+      dataSource.setServerName( "localhost" );  
       dataSource.setDatabaseName( "stocky" );
       //dataSource.setUrl(env.getProperty("db.url"));
       dataSource.setUser(env.getProperty("db.username"));

@@ -1,23 +1,27 @@
 /*Login Screen Style Sheet*/
 .loginanchor {
-    -fx-background-color:#3f3139;
+    -fx-background-color:#e5e5e5;
 }
 
 .STOCK {
-    -fx-text-fill:#e4e3e0 ;
+    -fx-text-fill:#5da187 ;
     -fx-font-size:40px;
     
 }
 
 .STOCKy {
-    -fx-text-fill:#dccebe;
+    -fx-text-fill:#5da187;
     -fx-font-size:30px;
 }
 
 .txt {
-    -fx-text-fill:#dccebe;
+    -fx-text-fill:#5da187;
+}
+
+.btn {
+    -fx-background-color:#5da187 ;
 }
 
 .navbtn {
-    -fx-text-fill:#e4e3e0 ;
+    -fx-text-fill:#0f0f0f ;
 }
