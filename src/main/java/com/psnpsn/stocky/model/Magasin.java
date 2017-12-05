@@ -20,15 +20,11 @@ import javax.persistence.Table;
 @Table(name="MAGASIN")
 public class Magasin {
     
-    @Id
-    @Column(name="ID_MAG")
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    
     private int id;
     
-    @Column(name="NOM_MAG")
     private String nom;
     
-    @Column(name="ADR_MAG")
     private String addr;
 
     public Magasin() {
@@ -39,6 +35,9 @@ public class Magasin {
         this.addr = addr;
     }
 
+    @Id
+    @Column(name="ID_MAG")
+    @GeneratedValue(strategy=GenerationType.AUTO)
     public int getId() {
         return id;
     }
@@ -47,6 +46,7 @@ public class Magasin {
         this.id = id;
     }
 
+    @Column(name="NOM_MAG")
     public String getNom() {
         return nom;
     }
@@ -55,6 +55,7 @@ public class Magasin {
         this.nom = nom;
     }
 
+    @Column(name="ADR_MAG")
     public String getAddr() {
         return addr;
     }

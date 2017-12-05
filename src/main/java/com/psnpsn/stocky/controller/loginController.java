@@ -4,20 +4,18 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import com.psnpsn.stocky.MainApp;
-import java.io.IOException;
+import com.psnpsn.stocky.service.UserService;
+import com.psnpsn.stocky.utils.StageManager;
 import java.net.URL;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
+import org.springframework.beans.factory.annotation.Autowired;
 
-public class loginController {
+public class loginController implements Initializable {
 
     @FXML
     private JFXTextField usrTxt;
@@ -30,48 +28,53 @@ public class loginController {
 
     @FXML
     private Label errorMsg;
+    
+    UserService usrService = MainApp.context.getBean(UserService.class);
+    
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        
+    }
 
     @FXML
     void closeApp(ActionEvent event) {
-
+        System.exit(0);
     }
 
     @FXML
     void dragged(MouseEvent event) {
+        MainApp.stage.setX(event.getScreenX() - MainApp.xOffset);
+        MainApp.stage.setY(event.getScreenY() - MainApp.yOffset);
 
     }
 
     @FXML
     void minimizeApp(ActionEvent event) {
-
+        MainApp.stage.setIconified(true);
     }
 
     @FXML
     void pressed(MouseEvent event) {
+        MainApp.xOffset=event.getSceneX();
+        MainApp.yOffset=event.getSceneY();
 
     }
 
     @FXML
     void seConnecter(ActionEvent event) {
-        try {
-            BorderPane root= MainApp.getRoot();
-            
-            URL top = getClass().getResource("/fxml/topmenu.fxml");
-            VBox topmenu = FXMLLoader.load(top);
-            
-            URL admin = getClass().getResource("/fxml/adminMenu.fxml");
-            VBox adminMenu = FXMLLoader.load(admin);
-            
-            URL content = getClass().getResource("/fxml/dashboard.fxml");
-            AnchorPane middle = FXMLLoader.load(content);
-            
-            root.setCenter(middle);
-            root.setTop(topmenu);
-            root.setLeft(adminMenu);
-        } catch (IOException ex) {
-            Logger.getLogger(loginController.class.getName()).log(Level.SEVERE, null, ex);
+        String login = usrTxt.getText();
+        char[] password = pwTxt.getText().toCharArray();
+        
+        if(usrService.checkLogin(login, password)>=0){
+            MainApp.stager.Load("dashboard");
         }
+        else{
+            System.out.println("USER DOESNT EXIST");
+        }
+        
 
     }
+
+    
 
 }

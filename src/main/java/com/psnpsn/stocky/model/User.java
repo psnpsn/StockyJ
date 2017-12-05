@@ -20,18 +20,13 @@ import javax.persistence.Table;
 @Table(name="USERS")
 public class User {
     
-    @Id
-    @Column(name="ID")
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    
     private int id;
     
-    @Column(name="LOGIN")
     private String login;
     
-    @Column(name="PASSWORD")
     private String pwd;
     
-    @Column(name="ADMIN")
     private int admin;
 
     public User (){
@@ -44,6 +39,9 @@ public class User {
         this.admin = admin;
     }
 
+    @Id
+    @Column(name="ID")
+    @GeneratedValue(strategy=GenerationType.AUTO)
     public int getId() {
         return id;
     }
@@ -52,6 +50,7 @@ public class User {
         this.id = id;
     }
 
+    @Column(name="LOGIN")
     public String getLogin() {
         return login;
     }
@@ -60,6 +59,7 @@ public class User {
         this.login = login;
     }
 
+    @Column(name="PASSWORD")
     public String getPwd() {
         return pwd;
     }
@@ -68,6 +68,7 @@ public class User {
         this.pwd = pwd;
     }
 
+    @Column(name="ADMIN")
     public int getAdmin() {
         return admin;
     }
@@ -75,5 +76,9 @@ public class User {
     public void setAdmin(int admin) {
         this.admin = admin;
     }
+
+    
+    
+    
     
 }

@@ -20,42 +20,31 @@ import javax.persistence.Table;
 @Table(name="FOURNISSEUR")
 public class Fournisseur {
     
-    @Id
-    @Column(name="ID_F")
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
+    private int id;
     
     
-    @Column(name="NOM_F")
     private String nom;
     
     
-    @Column(name="ADR_F")
     private String adr;
     
-    @Column(name="CODEP_F")
-    private Integer codeP;
+    private int codeP;
     
-    @Column(name="VILLE_F")
     private String ville;
     
-    @Column(name="PAYS_F")
     private String pays;
     
-    @Column(name="TEL_F")
-    private Integer tel;
+    private int tel;
     
-    @Column(name="FAX_F")
-    private Integer fax;
+    private int fax;
     
-    @Column(name="EMAIL_F")
     private String email;
     
     public Fournisseur(){
         
     }
 
-    public Fournisseur(String nom, String adr, Integer codeP, String ville, String pays, Integer tel, Integer fax, String email) {
+    public Fournisseur(String nom, String adr, int codeP, String ville, String pays, int tel, int fax, String email) {
         this.nom = nom;
         this.adr = adr;
         this.codeP = codeP;
@@ -67,15 +56,18 @@ public class Fournisseur {
     }
     
     
-
-    public Integer getId() {
+    @Id
+    @Column(name="ID_F")
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer num) {
+    public void setId(int num) {
         this.id = num;
     }
 
+    @Column(name="NOM_F")
     public String getNom() {
         return nom;
     }
@@ -84,6 +76,7 @@ public class Fournisseur {
         this.nom = nom;
     }
 
+    @Column(name="ADR_F")
     public String getAdr() {
         return adr;
     }
@@ -92,14 +85,16 @@ public class Fournisseur {
         this.adr = adr;
     }
 
-    public Integer getCodeP() {
+    @Column(name="CODEP_F")
+    public int getCodeP() {
         return codeP;
     }
 
-    public void setCodeP(Integer codeP) {
+    public void setCodeP(int codeP) {
         this.codeP = codeP;
     }
 
+    @Column(name="VILLE_F")
     public String getVille() {
         return ville;
     }
@@ -108,6 +103,7 @@ public class Fournisseur {
         this.ville = ville;
     }
 
+    @Column(name="PAYS_F")
     public String getPays() {
         return pays;
     }
@@ -116,22 +112,25 @@ public class Fournisseur {
         this.pays = pays;
     }
 
-    public Integer getTel() {
+    @Column(name="TEL_F")
+    public int getTel() {
         return tel;
     }
 
-    public void setTel(Integer tel) {
+    public void setTel(int tel) {
         this.tel = tel;
     }
 
-    public Integer getFax() {
+    @Column(name="FAX_F")
+    public int getFax() {
         return fax;
     }
 
-    public void setFax(Integer fax) {
+    public void setFax(int fax) {
         this.fax = fax;
     }
 
+    @Column(name="EMAIL_F")
     public String getEmail() {
         return email;
     }

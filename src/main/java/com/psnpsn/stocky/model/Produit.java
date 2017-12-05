@@ -24,33 +24,21 @@ import javax.persistence.Table;
 @Table(name="PRODUIT")
 public class Produit {
     
-    @Id
-    @Column(name="ID_P")
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    
     private int id;
     
-    @Column(name="designation")
     private String design;
     
-    @Column(name="unite")
     private String unite;
     
-    @Column(name="quantite")
     private int qte;
     
-    @Column(name="prix")
     private float prix;
     
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="ID_CAT", foreignKey=@ForeignKey(name="ID_CAT_FK"))
     private CategoriePrd cat;
     
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="ID_F", foreignKey=@ForeignKey(name="ID_F_FK"))
     private Fournisseur fourn;
     
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="ID_MAG", foreignKey=@ForeignKey(name="ID_MAG_FK"))
     private Magasin mag;
 
     public Produit() {
@@ -66,6 +54,9 @@ public class Produit {
         this.mag = mag;
     }
 
+    @Id
+    @Column(name="ID_P")
+    @GeneratedValue(strategy=GenerationType.AUTO)
     public int getId() {
         return id;
     }
@@ -74,6 +65,7 @@ public class Produit {
         this.id = id;
     }
 
+    @Column(name="designation")
     public String getDesign() {
         return design;
     }
@@ -82,6 +74,7 @@ public class Produit {
         this.design = design;
     }
 
+    @Column(name="unite")
     public String getUnite() {
         return unite;
     }
@@ -90,6 +83,7 @@ public class Produit {
         this.unite = unite;
     }
 
+    @Column(name="quantite")
     public int getQte() {
         return qte;
     }
@@ -98,6 +92,7 @@ public class Produit {
         this.qte = qte;
     }
 
+    @Column(name="prix")
     public float getPrix() {
         return prix;
     }
@@ -106,6 +101,8 @@ public class Produit {
         this.prix = prix;
     }
 
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="ID_CAT", foreignKey=@ForeignKey(name="ID_CAT_FK"))
     public CategoriePrd getCat() {
         return cat;
     }
@@ -114,6 +111,8 @@ public class Produit {
         this.cat = cat;
     }
 
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="ID_F", foreignKey=@ForeignKey(name="ID_F_FK"))
     public Fournisseur getFourn() {
         return fourn;
     }
@@ -122,6 +121,8 @@ public class Produit {
         this.fourn = fourn;
     }
 
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="ID_MAG", foreignKey=@ForeignKey(name="ID_MAG_FK"))
     public Magasin getMag() {
         return mag;
     }

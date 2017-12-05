@@ -1,0 +1,123 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 19, 2017, 12:41:10 PM
+    Author     : psnpsn
+*/
+
+/*BACKGROUNDS BASED ON COLOURS*/
+
+.lemonBckg{
+    -fx-background-color:#f4e5ba ;
+}
+
+.smokyBckg{
+    -fx-background-color:#0f0f0f ;
+}
+
+.platBckg {
+    -fx-background-color: #e5e5e5;
+}
+
+.blueBox{
+    -fx-background-color:#a1d8cb ;
+    
+}
+
+/*TOPMENU STYLE : LE MENU HAUT DES FENETRES*/
+
+.topXMin{
+    -fx-background-color:#f4e5ba;
+    -fx-text-fill:#0f0f0f;
+}
+
+.topXMin:hover{
+    -fx-background-color:#a1d8cb;
+    -fx-text-fill:black;
+}
+
+.topBtn{
+    
+}
+
+.topBanner{
+    -fx-text-fill: #5da187;
+    -fx-font-size:16px;
+    -fx-font-weight:bolder;
+    -fx-font-style:italic;
+}
+
+/*MENU STYLE : LE MENU GAUCHE DES FENETRES*/
+
+
+.menuBtn{
+    -fx-background-color:#0f0f0f ;
+    -fx-text-fill:#e5e5e5;
+    -fx-font-size:13px;
+    -fx-font-weight:bold;
+}
+
+.menuBtn:hover{
+    -fx-background-color:#2f2f2f ;
+    -fx-text-fill:f4e5ba;
+}
+
+.menuBorder{
+    
+}
+
+/*CENTER STYLE : LE CONTENU DES FENETRES*/
+
+
+.centerLabel {
+    -fx-text-fill:#0f0f0f;
+    -fx-font-size:13px;
+    -fx-font-style: italic ;
+    -fon-font-family:Times;
+}
+
+.centerText {
+    -fx-font-size:15px;
+}
+
+.centerBorder{
+    
+}
+
+.centerBtn{
+    -fx-background-color: #5da187;
+    -fx-text-fill:#e5e5e5 ;
+}
+
+.centerBtn:hover{
+    -fx-background-color:#a1d8cb ;
+    -fx-text-fill:white;
+}
+
+
+
+.dashBtn {
+    
+}
+
+.STOCK {
+    -fx-text-fill:#5da187 ;
+    -fx-font-size:40px;
+    
+}
+
+.STOCKy {
+    -fx-text-fill:#5da187;
+    -fx-font-size:30px;
+}
+
+.txt {
+    -fx-text-fill:#5da187;
+}
+
+.btn {
+    -fx-background-color:#5da187 ;
+}

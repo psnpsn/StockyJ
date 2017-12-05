@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" styleClass="centerBckg" stylesheets="@../styles/lightStyle.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.psnpsn.stocky.controller.produitListController">
+   <children>
+      <TableView fx:id="table" layoutX="120.0" layoutY="111.0" prefHeight="600.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="90.0">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="134.0" text="ID" />
+          <TableColumn fx:id="designCol" prefWidth="155.0" text="DESIGNATION" />
+            <TableColumn fx:id="uniteCol" prefWidth="120.0" text="UNITE" />
+            <TableColumn fx:id="qteCol" prefWidth="104.0" text="QUANTITE" />
+            <TableColumn fx:id="prixCol" prefWidth="106.0" text="PRIX" />
+            <TableColumn fx:id="catCol" prefWidth="107.0" text="CATEGORIE" />
+            <TableColumn fx:id="fournCol" prefWidth="111.0" text="FOURNISSEUR" />
+            <TableColumn fx:id="magCol" prefWidth="98.0" text="MAGASIN" />
+            <TableColumn fx:id="voirCol" prefWidth="64.0" text="VOIR" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

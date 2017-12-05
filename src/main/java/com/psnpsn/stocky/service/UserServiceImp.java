@@ -21,37 +21,43 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserServiceImp implements UserService{
 
     @Autowired
-    private UserDAO fournDao;
+    private UserDAO usrDao;
 
     @Transactional
     @Override
     public boolean create(User instance) {
-        fournDao.create(instance);
+        usrDao.create(instance);
         return true;
     }
 
     @Transactional (readOnly=true)
     @Override
     public ObservableList getAll() {
-        return fournDao.getAll();
+        return usrDao.getAll();
     }
     
     @Transactional
     @Override
     public void delete(int id) {
-        fournDao.delete(id);
+        usrDao.delete(id);
     }
 
     @Transactional
     @Override
     public boolean update(User instance) {
-        fournDao.update(instance);
+        usrDao.update(instance);
         return true;
     }
 
     @Transactional
     @Override
     public User find(int id) {
-        return fournDao.find(id);
+        return usrDao.find(id);
+    }
+
+    @Transactional
+    @Override
+    public int checkLogin(String login, char[] pwd) {
+        return usrDao.checkLogin(login, pwd);
     }
 }

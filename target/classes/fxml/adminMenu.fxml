@@ -4,16 +4,14 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.VBox?>
 
-
-<VBox prefHeight="700.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="600.0" prefWidth="200.0" styleClass="smokyBckg" stylesheets="@../styles/lightStyle.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.psnpsn.stocky.controller.adminMenuController">
    <children>
-      <JFXButton prefHeight="60.0" prefWidth="200.0" text="Produits" />
-      <JFXButton prefHeight="60.0" prefWidth="232.0" text="Fournisseur">
+      <JFXButton prefHeight="60.0" prefWidth="200.0" styleClass="menuBtn" text="Liste des produits" />
+      <JFXButton prefHeight="60.0" prefWidth="200.0" styleClass="menuBtn" text="Ajouter un produit" textAlignment="CENTER" textOverrun="CLIP">
          <VBox.margin>
             <Insets top="10.0" />
          </VBox.margin>
       </JFXButton>
-      <JFXButton prefHeight="60.0" prefWidth="232.0" text="Profils" />
    </children>
    <padding>
       <Insets top="20.0" />

@@ -1,22 +1,11 @@
 package com.psnpsn.stocky;
 
-import com.psnpsn.stocky.model.CategoriePrd;
-import com.psnpsn.stocky.model.Fournisseur;
-import com.psnpsn.stocky.model.Magasin;
-import com.psnpsn.stocky.model.Produit;
-import com.psnpsn.stocky.model.User;
-import com.psnpsn.stocky.service.CategoriePrdService;
-import com.psnpsn.stocky.service.FournisseurService;
-import com.psnpsn.stocky.service.MagasinService;
-import com.psnpsn.stocky.service.ProduitService;
-import com.psnpsn.stocky.service.UserService;
 import com.psnpsn.stocky.utils.AppConfig;
+import com.psnpsn.stocky.utils.StageManager;
 import java.net.URL;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -32,15 +21,21 @@ import org.springframework.context.annotation.ComponentScans;
     })
 public class MainApp extends Application {
      
+    public static AnnotationConfigApplicationContext context ; 
+     
     public static double xOffset = 0;
     public static double yOffset = 0;
     private static final BorderPane root = new BorderPane();
     public static Stage stage;
+    public static StageManager stager = new StageManager();
     
     public static BorderPane getRoot() {
         return root;
     }
     
+    public static AnnotationConfigApplicationContext getContext(){
+        return MainApp.context;
+    }
     
 
     @Override
@@ -56,7 +51,7 @@ public class MainApp extends Application {
         AnchorPane middle = FXMLLoader.load(content);
         root.setCenter(middle);
         
-        Scene scene = new Scene(root,1200,780);
+        Scene scene = new Scene(root,1200,680);
         
         primaryStage.setTitle("STOCKY");
         primaryStage.setScene(scene);
@@ -76,9 +71,9 @@ public class MainApp extends Application {
     
    
     public static void main(String[] args) {
+        context =   new AnnotationConfigApplicationContext(AppConfig.class);
         launch(args);
-//        AnnotationConfigApplicationContext context = 
-//            new AnnotationConfigApplicationContext(AppConfig.class);
+       
 //
 //      FournisseurService fournService = context.getBean(FournisseurService.class);
 //      UserService usrService = context.getBean(UserService.class);

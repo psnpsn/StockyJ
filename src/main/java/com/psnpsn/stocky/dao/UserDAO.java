@@ -9,6 +9,7 @@ import com.psnpsn.stocky.model.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javax.persistence.TypedQuery;
+import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -25,8 +26,10 @@ public class UserDAO implements GenericDAO<User> {
 
     @Override
     public boolean create(User instance) {
-        sessionFactory.getCurrentSession().save(instance);
-        return true;
+        
+            sessionFactory.getCurrentSession().save(instance);
+            return true;
+       
     }
 
     @Override
@@ -62,4 +65,20 @@ public class UserDAO implements GenericDAO<User> {
         return true;
     }
     
+    public int checkLogin(String login, char[] pwd){
+        @SuppressWarnings("unchecked")
+        TypedQuery<User> query=sessionFactory.getCurrentSession().createQuery("from User where LOGIN = :login AND PASSWORD = :pwd");
+        query.setParameter("login",login);
+        query.setParameter("pwd",pwd);
+        ObservableList<User> list = FXCollections.observableArrayList(query.getResultList());
+        if (list.isEmpty()){
+            return -1;
+        }else if (list.size()==1){
+        return list.get(0).getAdmin();
+        }
+        return -2;
+    }
+            
+
+
 }

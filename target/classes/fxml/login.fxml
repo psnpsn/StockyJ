@@ -3,24 +3,52 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.Double?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Polygon?>
 
-<AnchorPane id="AnchorPane" prefHeight="780.0" prefWidth="1200.0" styleClass="loginanchor" stylesheets="@../styles/login.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.psnpsn.stocky.controller.loginController">
+<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1200.0" styleClass="platBckg" stylesheets="@../styles/lightStyle.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.psnpsn.stocky.controller.loginController">
    <children>
-      <Label layoutX="392.0" layoutY="164.0" text="An Inventory management application" />
-      <Label layoutX="321.0" layoutY="108.0" prefHeight="65.0" prefWidth="138.0" styleClass="STOCK" text="STOCK" />
-      <Label layoutX="458.0" layoutY="128.0" styleClass="STOCKy" text="y" />
-      <JFXTextField fx:id="usrTxt" focusColor="#a1d8cb" labelFloat="true" layoutX="800.0" layoutY="294.0" prefHeight="26.0" prefWidth="233.0" promptText="Utilisateur" styleClass="txt" unFocusColor="#5da187" />
-      <JFXPasswordField fx:id="pwTxt" focusColor="#a1d8cb" labelFloat="true" layoutX="800.0" layoutY="341.0" prefHeight="26.0" prefWidth="233.0" promptText="Mot de passe" styleClass="txt" unFocusColor="#5da187" />
-      <JFXButton fx:id="loginBtn" layoutX="908.0" layoutY="415.0" onAction="#seConnecter" prefHeight="35.0" prefWidth="126.0" styleClass="btn" text="SE CONNECTER" textFill="WHITE" />
-      <Label fx:id="errorMsg" layoutX="524.0" layoutY="383.0" text="Utilisateur ou mot de passe faux." textFill="RED" visible="false" />
       <HBox alignment="TOP_RIGHT" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="30.0" prefWidth="1200.0">
          <children>
             <JFXButton alignment="TOP_CENTER" contentDisplay="TOP" onAction="#minimizeApp" prefHeight="30.0" prefWidth="30.0" text="_" />
             <JFXButton onAction="#closeApp" prefHeight="30.0" prefWidth="30.0" text="X" />
          </children>
       </HBox>
+      <Polygon fill="#f4e5ba" layoutX="274.0" layoutY="335.0" stroke="#0808087d" strokeType="INSIDE" strokeWidth="0.0" styleClass="lemonBckg">
+        <points>
+
+                    <Double fx:value="-150.0" />
+                <Double fx:value="90.0" />
+
+                    <Double fx:value="0.0" />
+                <Double fx:value="180.0" />
+
+                    <Double fx:value="150.0" />
+                <Double fx:value="90.0" />
+
+                    <Double fx:value="150.0" />
+                <Double fx:value="-90.0" />
+
+                    <Double fx:value="0.0" />
+                <Double fx:value="-180.0" />
+
+                    <Double fx:value="-150.0" />
+                <Double fx:value="-90.0" />
+            </points>
+      </Polygon>
+      <AnchorPane layoutY="240.0" prefHeight="200.0" prefWidth="1200.0" styleClass="lemonBckg">
+         <children>
+            <JFXTextField fx:id="usrTxt" focusColor="#a1d8cb" labelFloat="true" layoutX="200.0" layoutY="20.0" prefHeight="26.0" prefWidth="233.0" promptText="Utilisateur" styleClass="txt" unFocusColor="#5da187" AnchorPane.leftAnchor="170.0" AnchorPane.topAnchor="20.0" />
+            <JFXPasswordField fx:id="pwTxt" focusColor="#a1d8cb" labelFloat="true" prefHeight="26.0" prefWidth="233.0" promptText="Mot de passe" styleClass="txt" unFocusColor="#5da187" AnchorPane.leftAnchor="170.0" AnchorPane.topAnchor="60.0" />
+            <JFXButton fx:id="loginBtn" onAction="#seConnecter" prefHeight="35.0" prefWidth="126.0" styleClass="btn" text="SE CONNECTER" textFill="WHITE" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="100.0" />
+            <Label fx:id="errorMsg" text="Utilisateur ou mot de passe faux." textFill="RED" visible="false" AnchorPane.leftAnchor="170.0" AnchorPane.topAnchor="140.0" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="830.0" layoutY="199.0" text="An Inventory management application" />
+      <Label layoutX="759.0" layoutY="143.0" prefHeight="65.0" prefWidth="138.0" styleClass="STOCK" text="STOCK" />
+      <Label layoutX="896.0" layoutY="163.0" styleClass="STOCKy" text="y" />
    </children>
 </AnchorPane>
