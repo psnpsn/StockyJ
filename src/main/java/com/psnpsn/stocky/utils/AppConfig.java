@@ -10,6 +10,7 @@ import com.psnpsn.stocky.model.Fournisseur;
 import com.psnpsn.stocky.model.Magasin;
 import com.psnpsn.stocky.model.Produit;
 import com.psnpsn.stocky.model.User;
+import com.psnpsn.stocky.model.UserProfile;
 import java.util.Properties;
 
 import javax.sql.DataSource;
@@ -65,7 +66,7 @@ public class AppConfig {
       props.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
 
       factoryBean.setHibernateProperties(props);
-      factoryBean.setAnnotatedClasses(Fournisseur.class,User.class,CategoriePrd.class,Magasin.class,Produit.class);
+      factoryBean.setAnnotatedClasses(Fournisseur.class,User.class,CategoriePrd.class,Magasin.class,Produit.class,UserProfile.class);
       return factoryBean;
    }
 

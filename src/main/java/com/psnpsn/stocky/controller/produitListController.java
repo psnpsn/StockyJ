@@ -70,11 +70,12 @@ public class produitListController implements Initializable {
         loadProduits();
     }
     
+    // *Initializing Table View
     private void initCol(){
-        //init table
+        // ** init table
         table.getSelectionModel().setCellSelectionEnabled(false);
         table.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-        //init columns
+        // ** init columns
         idCol.setCellValueFactory(new PropertyValueFactory("id"));
         designCol.setCellValueFactory(new PropertyValueFactory("design"));
         uniteCol.setCellValueFactory(new PropertyValueFactory("unite"));
@@ -90,7 +91,7 @@ public class produitListController implements Initializable {
             return new SimpleStringProperty(""+cellData.getValue().getMag().getId());
         });
         voirCol.setCellValueFactory(new PropertyValueFactory<>("ACTION"));
-
+        // ** setting the 'View Product' button into the cell
         voirCol.setCellFactory(fn_voir_eleve ->
     new TableCell<Produit, Boolean>() {
             final Button viewBtn = new Button("Click");
@@ -111,13 +112,13 @@ public class produitListController implements Initializable {
                 iv.setCache(true);
                 iv.setFitHeight(20);
                 iv.setFitWidth(20);
-                //iv.fitWidthProperty().bind(voirCol.widthProperty().subtract(40));
+                
                 viewBtn.setGraphic(iv);
                 setGraphic(viewBtn);
                 setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
                 setAlignment(Pos.CENTER);
                 setText(null);
-                
+                // ** button action
                 viewBtn.setOnAction(e -> {
                     Produit prod = getTableView().getItems().get(getIndex());
                     //fxml load
@@ -131,10 +132,8 @@ public class produitListController implements Initializable {
         });
     }
 
+    // Loading all products into Talbe View
     private void loadProduits() {
-        
-        
-        
         prodList.clear();
         prodList = prodService.getAll();
         table.setItems(prodList);

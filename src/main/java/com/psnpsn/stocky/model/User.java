@@ -25,7 +25,7 @@ public class User {
     
     private String login;
     
-    private String pwd;
+    private char[] pwd;
     
     private int admin;
 
@@ -33,7 +33,7 @@ public class User {
         
     }
     
-    public User(String login, String pwd, int admin) {
+    public User(String login, char[] pwd, int admin) {
         this.login = login;
         this.pwd = pwd;
         this.admin = admin;
@@ -60,11 +60,11 @@ public class User {
     }
 
     @Column(name="PASSWORD")
-    public String getPwd() {
+    public char[] getPwd() {
         return pwd;
     }
 
-    public void setPwd(String pwd) {
+    public void setPwd(char[] pwd) {
         this.pwd = pwd;
     }
 

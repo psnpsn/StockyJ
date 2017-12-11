@@ -5,6 +5,7 @@
  */
 package com.psnpsn.stocky.model;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,15 +31,15 @@ public class UserProfile {
     private String nom;
     private String prenom;
     private String email;
-    private Date lastLogin;
-    private Date createdOn;
+    private LocalDateTime lastLogin;
+    private LocalDateTime createdOn;
     private String imgurl;
     private User user;
 
     public UserProfile() {
     }
 
-    public UserProfile(char role, String nom, String prenom, String email, Date last, Date date, String imgurl) {
+    public UserProfile(char role, String nom, String prenom, String email, LocalDateTime last, LocalDateTime date, String imgurl) {
         this.role = role;
         this.nom = nom;
         this.prenom = prenom;
@@ -94,20 +95,20 @@ public class UserProfile {
     }
 
     @Column(name="LAST_DATE")
-    public Date getLastLogin() {
+    public LocalDateTime getLastLogin() {
         return lastLogin;
     }
 
-    public void setLastLogin(Date last) {
+    public void setLastLogin(LocalDateTime last) {
         this.lastLogin = last;
     }
 
     @Column(name="CREATION_DATE")
-    public Date getCreatedOn() {
+    public LocalDateTime getCreatedOn() {
         return createdOn;
     }
 
-    public void setCreatedOn(Date date) {
+    public void setCreatedOn(LocalDateTime date) {
         this.createdOn = date;
     }
 
@@ -126,7 +127,7 @@ public class UserProfile {
         return user;
     }
 
-    public void setUsr(User usr) {
+    public void setUser(User usr) {
         this.user = usr;
     }
     

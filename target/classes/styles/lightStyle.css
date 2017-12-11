@@ -103,9 +103,13 @@ and open the template in the editor.
     
 }
 
+/*LOGIN STOCKY */
+
 .STOCK {
     -fx-text-fill:#5da187 ;
     -fx-font-size:40px;
+    -fx-font-style:italic;
+    -fx-font-weight:bold;
     
 }
 
@@ -114,10 +118,24 @@ and open the template in the editor.
     -fx-font-size:30px;
 }
 
+.createUser {
+    -fx-text-fill: blue;
+    -fx-font-style:italic;
+    -fx-font-size:11px;
+}
+
 .txt {
     -fx-text-fill:#5da187;
 }
 
 .btn {
     -fx-background-color:#5da187 ;
+}
+
+.removeHover:hover{
+    
+}
+
+.validateTxt{
+    -fx-text-fill : red;
 }

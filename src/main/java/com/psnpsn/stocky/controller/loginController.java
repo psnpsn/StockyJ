@@ -6,36 +6,39 @@ import com.jfoenix.controls.JFXTextField;
 import com.psnpsn.stocky.MainApp;
 import com.psnpsn.stocky.service.UserService;
 import com.psnpsn.stocky.utils.StageManager;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Polygon;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class loginController implements Initializable {
 
     @FXML
-    private JFXTextField usrTxt;
-
+    private Polygon poly;
     @FXML
-    private JFXPasswordField pwTxt;
-
-    @FXML
-    private JFXButton loginBtn;
-
-    @FXML
-    private Label errorMsg;
-    
-    UserService usrService = MainApp.context.getBean(UserService.class);
+    private AnchorPane anchor;
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        
+        try {
+            URL signIn = getClass().getResource("/fxml/loginSignIn.fxml");
+            AnchorPane anchorpane = FXMLLoader.load(signIn);
+            anchor.getChildren().add(anchorpane);
+        } catch (IOException ex) {
+            Logger.getLogger(loginController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-
+    
     @FXML
     void closeApp(ActionEvent event) {
         System.exit(0);
@@ -59,22 +62,5 @@ public class loginController implements Initializable {
         MainApp.yOffset=event.getSceneY();
 
     }
-
-    @FXML
-    void seConnecter(ActionEvent event) {
-        String login = usrTxt.getText();
-        char[] password = pwTxt.getText().toCharArray();
-        
-        if(usrService.checkLogin(login, password)>=0){
-            MainApp.stager.Load("dashboard");
-        }
-        else{
-            System.out.println("USER DOESNT EXIST");
-        }
-        
-
-    }
-
-    
 
 }
