@@ -57,7 +57,7 @@ public class UserServiceImp implements UserService{
 
     @Transactional
     @Override
-    public int checkLogin(String login, char[] pwd) {
+    public User checkLogin(String login, char[] pwd) {
         return usrDao.checkLogin(login, pwd);
     }
 }

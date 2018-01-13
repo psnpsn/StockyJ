@@ -5,11 +5,14 @@
  */
 package com.psnpsn.stocky.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -27,7 +30,9 @@ public class User {
     
     private char[] pwd;
     
-    private int admin;
+    private int role;
+    
+    private UserProfile userProfile;
 
     public User (){
         
@@ -36,7 +41,7 @@ public class User {
     public User(String login, char[] pwd, int admin) {
         this.login = login;
         this.pwd = pwd;
-        this.admin = admin;
+        this.role = admin;
     }
 
     @Id
@@ -68,13 +73,24 @@ public class User {
         this.pwd = pwd;
     }
 
-    @Column(name="ADMIN")
-    public int getAdmin() {
-        return admin;
+    @Column(name="ROLE")
+    public int getRole() {
+        return role;
     }
 
-    public void setAdmin(int admin) {
-        this.admin = admin;
+    public void setRole(int role) {
+        this.role = role;
+    }
+
+    @OneToOne(fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL,
+            mappedBy = "user")
+    public UserProfile getUserProfile() {
+        return userProfile;
+    }
+
+    public void setUserProfile(UserProfile userProfile) {
+        this.userProfile = userProfile;
     }
 
     

@@ -24,6 +24,6 @@ public interface UserService {
     
     public boolean update(User F);
     
-    public int checkLogin(String login,char[] pwd);
+    public User checkLogin(String login,char[] pwd);
     
 }

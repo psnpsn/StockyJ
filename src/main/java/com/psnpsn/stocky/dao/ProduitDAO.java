@@ -8,57 +8,53 @@ package com.psnpsn.stocky.dao;
 import com.psnpsn.stocky.model.Produit;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javax.persistence.TypedQuery;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author psnpsn
  */
+
 @Repository
 public class ProduitDAO implements GenericDAO<Produit> {
     
-    @Autowired
-    private SessionFactory sessionFactory;
+    @PersistenceContext
+   private EntityManager em;
+
 
     @Override
     public boolean create(Produit instance) {
-        sessionFactory.getCurrentSession().save(instance);
+        em.persist(instance);
         return true;
     }
 
     @Override
     public ObservableList<Produit> getAll() {
-        @SuppressWarnings("unchecked")
-        TypedQuery<Produit> query=sessionFactory.getCurrentSession().createQuery("from Produit");
-        ObservableList<Produit> list = FXCollections.observableArrayList(query.getResultList());
+        CriteriaQuery<Produit> criteriaQuery = em.getCriteriaBuilder().createQuery(Produit.class);
+      @SuppressWarnings("unused")
+      Root<Produit> root = criteriaQuery.from(Produit.class);
+      ObservableList<Produit> list = FXCollections.observableArrayList(em.createQuery(criteriaQuery).getResultList());
       return list;
     }
 
-    @Override
+    @Override   
     public Produit find(Integer id) {
-        @SuppressWarnings("unchecked")
-        TypedQuery<Produit> query=sessionFactory.getCurrentSession().createQuery("from Produit where ID_P = :id");
-        query.setParameter("id",id);
-        Produit prod = query.getSingleResult();
-        return prod;
+        return em.find(Produit.class, id);
     }
 
     @Override
     public void delete(Integer id) {
-        @SuppressWarnings("unchecked")
-        TypedQuery<Produit> query=sessionFactory.getCurrentSession().createQuery("DELETE from Produit WHERE ID_P = :id");
-        query.setParameter("id",id);
-        query.executeUpdate();
+        em.remove(id);
     }
 
     @Override
     public boolean update(Produit instance) {
-         sessionFactory.getCurrentSession().saveOrUpdate(instance);
+        em.merge(instance);
         return true;
     }
-    
     
 }

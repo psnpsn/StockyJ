@@ -5,6 +5,8 @@
  */
 package com.psnpsn.stocky.controller;
 
+import com.psnpsn.stocky.MainApp;
+import com.psnpsn.stocky.utils.StageManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
@@ -21,6 +23,7 @@ public class dashboardController {
 
     @FXML
     private void produits(ActionEvent event) {
+        StageManager.getStageManager().Load("produitList");
     }
 
     @FXML

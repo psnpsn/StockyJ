@@ -1,5 +1,7 @@
 com/psnpsn/stocky/dao/MagasinDAO.class
+com/psnpsn/stocky/controller/menuAdminController.class
 com/psnpsn/stocky/model/CategoriePrd.class
+com/psnpsn/stocky/controller/loginMenuController.class
 com/psnpsn/stocky/service/UserServiceImp.class
 com/psnpsn/stocky/dao/ProduitDAO.class
 com/psnpsn/stocky/utils/AppConfig.class
@@ -28,10 +30,11 @@ com/psnpsn/stocky/service/UserService.class
 com/psnpsn/stocky/controller/dashboardController.class
 com/psnpsn/stocky/model/User.class
 com/psnpsn/stocky/service/FournisseurServiceImp.class
+com/psnpsn/stocky/controller/windowBarController.class
 com/psnpsn/stocky/dao/GenericDAO.class
 com/psnpsn/stocky/service/MagasinService.class
+com/psnpsn/stocky/controller/produitListController$2.class
 com/psnpsn/stocky/service/ProduitService.class
 com/psnpsn/stocky/dao/UserDAO.class
 com/psnpsn/stocky/utils/StageManager.class
 com/psnpsn/stocky/service/FournisseurService.class
-com/psnpsn/stocky/controller/adminMenuController.class

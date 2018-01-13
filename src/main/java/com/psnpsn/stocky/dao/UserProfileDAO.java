@@ -8,7 +8,11 @@ package com.psnpsn.stocky.dao;
 import com.psnpsn.stocky.model.UserProfile;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -17,46 +21,42 @@ import org.springframework.stereotype.Repository;
  *
  * @author psnpsn
  */
+
 @Repository
 public class UserProfileDAO implements GenericDAO<UserProfile> {
     
-    @Autowired
-    private SessionFactory sessionFactory;
+    @PersistenceContext
+   private EntityManager em;
+
 
     @Override
     public boolean create(UserProfile instance) {
-        sessionFactory.getCurrentSession().save(instance);
-            return true;
+        em.persist(instance);
+        return true;
     }
 
     @Override
     public ObservableList<UserProfile> getAll() {
-        @SuppressWarnings("unchecked")
-        TypedQuery<UserProfile> query=sessionFactory.getCurrentSession().createQuery("from Users");
-        ObservableList<UserProfile> list = FXCollections.observableArrayList(query.getResultList());
+        CriteriaQuery<UserProfile> criteriaQuery = em.getCriteriaBuilder().createQuery(UserProfile.class);
+      @SuppressWarnings("unused")
+      Root<UserProfile> root = criteriaQuery.from(UserProfile.class);
+      ObservableList<UserProfile> list = FXCollections.observableArrayList(em.createQuery(criteriaQuery).getResultList());
       return list;
     }
 
-    @Override
+    @Override   
     public UserProfile find(Integer id) {
-        @SuppressWarnings("unchecked")
-        TypedQuery<UserProfile> query=sessionFactory.getCurrentSession().createQuery("from Users where ID = :id");
-        query.setParameter("id",id);
-        UserProfile usr = query.getSingleResult();
-        return usr;
+        return em.find(UserProfile.class, id);
     }
 
     @Override
     public void delete(Integer id) {
-         @SuppressWarnings("unchecked")
-        TypedQuery<UserProfile> query=sessionFactory.getCurrentSession().createQuery("DELETE from Users WHERE ID = :id");
-        query.setParameter("id",id);
-        query.executeUpdate();
+        em.remove(id);
     }
 
     @Override
     public boolean update(UserProfile instance) {
-        sessionFactory.getCurrentSession().saveOrUpdate(instance);
+        em.merge(instance);
         return true;
     }
     

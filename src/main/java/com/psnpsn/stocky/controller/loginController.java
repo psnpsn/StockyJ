@@ -21,23 +21,12 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Polygon;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class loginController implements Initializable {
+public class loginController {
 
     @FXML
     private Polygon poly;
     @FXML
     private AnchorPane anchor;
-    
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        try {
-            URL signIn = getClass().getResource("/fxml/loginSignIn.fxml");
-            AnchorPane anchorpane = FXMLLoader.load(signIn);
-            anchor.getChildren().add(anchorpane);
-        } catch (IOException ex) {
-            Logger.getLogger(loginController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
     
     @FXML
     void closeApp(ActionEvent event) {

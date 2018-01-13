@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="275.0" styleClass="daquaB" stylesheets="@../styles/lightStyle.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.psnpsn.stocky.controller.menuAdminController">
+   <children>
+      <Label layoutX="106.0" layoutY="14.0" styleClass="app-label" text="STOCKY" />
+      <VBox layoutY="254.0" prefHeight="321.0" prefWidth="275.0">
+         <children>
+            <JFXButton fx:id="dashBtn" onAction="#goDashboard" prefHeight="50.0" prefWidth="275.0" text="Dashboard">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+               <styleClass>
+                  <String fx:value="charcoalB" />
+                  <String fx:value="menu-btn" />
+               </styleClass></JFXButton>
+            <JFXButton fx:id="prodBtn" onAction="#goProduits" prefHeight="50.0" prefWidth="275.0" text="Produits">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+               <styleClass>
+                  <String fx:value="charcoalB" />
+                  <String fx:value="menu-btn" />
+               </styleClass></JFXButton>
+            <JFXButton onAction="#goFournisseurs" prefHeight="50.0" prefWidth="275.0" text="Fournisseurs">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+               <styleClass>
+                  <String fx:value="charcoalB" />
+                  <String fx:value="menu-btn" />
+               </styleClass></JFXButton>
+            <JFXButton fx:id="magBtn" onAction="#goMagasins" prefHeight="50.0" prefWidth="275.0" text="Magasins">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+               <styleClass>
+                  <String fx:value="charcoalB" />
+                  <String fx:value="menu-btn" />
+               </styleClass></JFXButton>
+            <JFXButton fx:id="catBtn" onAction="#goCategories" prefHeight="50.0" prefWidth="275.0" text="Catégories Produits">
+               <styleClass>
+                  <String fx:value="charcoalB" />
+                  <String fx:value="menu-btn" />
+               </styleClass>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="userBtn" onAction="#goUsers" prefHeight="50.0" prefWidth="275.0" text="Utilisateurs">
+               <styleClass>
+                  <String fx:value="charcoalB" />
+                  <String fx:value="menu-btn" />
+               </styleClass>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </JFXButton>
+         </children>
+      </VBox>
+      <VBox alignment="TOP_CENTER" layoutY="70.0" prefHeight="182.0" prefWidth="280.0">
+         <children>
+            <ImageView fx:id="userImage" fitHeight="74.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/admin-image.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="usernameLabel" styleClass="username-label" text="Hello Admin" />
+            <HBox alignment="CENTER" prefHeight="87.0" prefWidth="280.0">
+               <children>
+                  <JFXButton fx:id="profileBtn" onAction="#goProfile" text="Mon Profile">
+                     <styleClass>
+                        <String fx:value="profile-btn" />
+                        <String fx:value="greyB" />
+                     </styleClass>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin></JFXButton>
+                  <JFXButton fx:id="logoutBtn" onAction="#disconnect" text="Déconnexion">
+                     <styleClass>
+                        <String fx:value="profile-btn" />
+                        <String fx:value="greyB" />
+                     </styleClass>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin></JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

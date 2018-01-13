@@ -10,6 +10,7 @@
 /home/psnpsn/NetBeansProjects/Stocky/src/main/java/com/psnpsn/stocky/service/MagasinService.java
 /home/psnpsn/NetBeansProjects/Stocky/src/main/java/com/psnpsn/stocky/controller/loginSignUpController.java
 /home/psnpsn/NetBeansProjects/Stocky/src/main/java/com/psnpsn/stocky/model/Fournisseur.java
+/home/psnpsn/NetBeansProjects/Stocky/src/main/java/com/psnpsn/stocky/controller/loginMenuController.java
 /home/psnpsn/NetBeansProjects/Stocky/src/main/java/com/psnpsn/stocky/utils/AppConfig.java
 /home/psnpsn/NetBeansProjects/Stocky/src/main/java/com/psnpsn/stocky/service/CategoriePrdServiceImp.java
 /home/psnpsn/NetBeansProjects/Stocky/src/main/java/com/psnpsn/stocky/service/FournisseurService.java
@@ -17,15 +18,16 @@
 /home/psnpsn/NetBeansProjects/Stocky/src/main/java/com/psnpsn/stocky/controller/dashboardController.java
 /home/psnpsn/NetBeansProjects/Stocky/src/main/java/com/psnpsn/stocky/model/CategoriePrd.java
 /home/psnpsn/NetBeansProjects/Stocky/src/main/java/com/psnpsn/stocky/dao/ProduitDAO.java
+/home/psnpsn/NetBeansProjects/Stocky/src/main/java/com/psnpsn/stocky/controller/menuAdminController.java
 /home/psnpsn/NetBeansProjects/Stocky/src/main/java/com/psnpsn/stocky/utils/StageManager.java
 /home/psnpsn/NetBeansProjects/Stocky/src/main/java/com/psnpsn/stocky/MainApp.java
 /home/psnpsn/NetBeansProjects/Stocky/src/main/java/com/psnpsn/stocky/service/UserProfileService.java
-/home/psnpsn/NetBeansProjects/Stocky/src/main/java/com/psnpsn/stocky/controller/adminMenuController.java
 /home/psnpsn/NetBeansProjects/Stocky/src/main/java/com/psnpsn/stocky/service/MagasinServiceImp.java
 /home/psnpsn/NetBeansProjects/Stocky/src/main/java/com/psnpsn/stocky/controller/produitListController.java
 /home/psnpsn/NetBeansProjects/Stocky/src/main/java/com/psnpsn/stocky/dao/CategoriePrdDAO.java
 /home/psnpsn/NetBeansProjects/Stocky/src/main/java/com/psnpsn/stocky/dao/GenericDAO.java
 /home/psnpsn/NetBeansProjects/Stocky/src/main/java/com/psnpsn/stocky/model/Produit.java
+/home/psnpsn/NetBeansProjects/Stocky/src/main/java/com/psnpsn/stocky/controller/windowBarController.java
 /home/psnpsn/NetBeansProjects/Stocky/src/main/java/com/psnpsn/stocky/dao/UserProfileDAO.java
 /home/psnpsn/NetBeansProjects/Stocky/src/main/java/com/psnpsn/stocky/service/CategoriePrdService.java
 /home/psnpsn/NetBeansProjects/Stocky/src/main/java/com/psnpsn/stocky/service/UserProfileServiceImp.java

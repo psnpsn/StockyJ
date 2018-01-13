@@ -1,23 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" styleClass="centerBckg" stylesheets="@../styles/lightStyle.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.psnpsn.stocky.controller.produitListController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="925.0" styleClass="centerBckg" stylesheets="@../styles/lightStyle.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.psnpsn.stocky.controller.produitListController">
    <children>
-      <TableView fx:id="table" layoutX="120.0" layoutY="111.0" prefHeight="600.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="90.0">
-        <columns>
-          <TableColumn fx:id="idCol" prefWidth="134.0" text="ID" />
-          <TableColumn fx:id="designCol" prefWidth="155.0" text="DESIGNATION" />
-            <TableColumn fx:id="uniteCol" prefWidth="120.0" text="UNITE" />
-            <TableColumn fx:id="qteCol" prefWidth="104.0" text="QUANTITE" />
-            <TableColumn fx:id="prixCol" prefWidth="106.0" text="PRIX" />
-            <TableColumn fx:id="catCol" prefWidth="107.0" text="CATEGORIE" />
-            <TableColumn fx:id="fournCol" prefWidth="111.0" text="FOURNISSEUR" />
-            <TableColumn fx:id="magCol" prefWidth="98.0" text="MAGASIN" />
-            <TableColumn fx:id="voirCol" prefWidth="64.0" text="VOIR" />
-        </columns>
+      <TableView fx:id="table" layoutX="16.0" layoutY="111.0" prefHeight="510.0" prefWidth="894.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="90.0">
+         <columns>
+            <TableColumn fx:id="designCol" prefWidth="177.0" text="Designation" />
+            <TableColumn fx:id="uniteCol" prefWidth="73.0" text="Unité" />
+            <TableColumn fx:id="qteCol" prefWidth="97.0" text="Quantité" />
+            <TableColumn fx:id="prixCol" prefWidth="89.0" text="Prix" />
+            <TableColumn fx:id="catCol" prefWidth="128.0" text="Categorie" />
+            <TableColumn fx:id="fournCol" prefWidth="115.0" text="Fournisseur" />
+            <TableColumn fx:id="magCol" prefWidth="98.0" text="Magasin" />
+            <TableColumn fx:id="editCol" prefWidth="60.0" text="Edit" />
+            <TableColumn fx:id="suppCol" prefWidth="56.0" text="Delete" />
+         </columns>
       </TableView>
+      <JFXButton fx:id="addBtn" layoutX="138.0" layoutY="32.0" prefHeight="44.0" prefWidth="154.0" styleClass="goldB" text="Ajouter un produit" />
+      <JFXTextField fx:id="filterTxt" layoutX="659.0" layoutY="38.0" prefHeight="26.0" prefWidth="246.0" />
+      <Label layoutX="517.0" layoutY="49.0" text="Filtrer les résultats:" />
+      <AnchorPane fx:id="windowBar" prefHeight="26.0" prefWidth="925.0" />
    </children>
 </AnchorPane>

@@ -3,19 +3,24 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="275.0" styleClass="blueBox" stylesheets="@../styles/lightStyle.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.psnpsn.stocky.controller.loginSignUpController">
+<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="275.0" styleClass="daquaB" stylesheets="@../styles/lightStyle.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.psnpsn.stocky.controller.loginSignUpController">
    <children>
-      <JFXTextField fx:id="loginTxt" focusColor="#a1d8cb" labelFloat="true" layoutX="34.0" layoutY="38.0" prefHeight="26.0" prefWidth="200.0" promptText="Login*" styleClass="txt" unFocusColor="#5da187" AnchorPane.leftAnchor="34.0" AnchorPane.topAnchor="20.0" />
-      <JFXTextField fx:id="nomTxt" focusColor="#a1d8cb" labelFloat="true" layoutX="34.0" layoutY="143.0" prefHeight="26.0" prefWidth="200.0" promptText="Nom" styleClass="txt" unFocusColor="#5da187" AnchorPane.topAnchor="170.0" />
-      <JFXTextField fx:id="prenomTxt" focusColor="#a1d8cb" labelFloat="true" layoutX="34.0" layoutY="214.0" prefWidth="200.0" promptText="Prénom" styleClass="txt" unFocusColor="#5da187" AnchorPane.topAnchor="220.0" />
-      <JFXPasswordField fx:id="mdpTxt" focusColor="#a1d8cb" labelFloat="true" layoutX="34.0" layoutY="79.0" prefWidth="200.0" promptText="Mot de passe*" styleClass="txt" unFocusColor="#5da187" AnchorPane.topAnchor="70.0" />
-      <JFXPasswordField fx:id="repmdpTxt" focusColor="#a1d8cb" labelFloat="true" layoutX="34.0" layoutY="117.0" prefWidth="200.0" promptText="Répéter le mot de passe*" styleClass="txt" unFocusColor="#5da187" AnchorPane.topAnchor="120.0" />
-      <JFXTextField fx:id="emailTxt" focusColor="#a1d8cb" labelFloat="true" layoutX="34.0" layoutY="278.0" prefWidth="200.0" promptText="Email" styleClass="txt" unFocusColor="#5da187" AnchorPane.topAnchor="270.0" />
-      <JFXButton layoutX="153.0" layoutY="312.0" onAction="#confirmer" styleClass="btn" text="Confirmer" />
+      <JFXTextField fx:id="loginTxt" focusColor="#a1d8cb" labelFloat="true" layoutX="34.0" layoutY="38.0" prefHeight="26.0" prefWidth="200.0" promptText="Login*" styleClass="txt" unFocusColor="#B4B4B4" AnchorPane.leftAnchor="34.0" AnchorPane.topAnchor="20.0" />
+      <JFXTextField fx:id="nomTxt" focusColor="#a1d8cb" labelFloat="true" layoutX="34.0" layoutY="143.0" prefHeight="26.0" prefWidth="200.0" promptText="Nom" styleClass="txt" unFocusColor="#B4B4B4" AnchorPane.topAnchor="170.0" />
+      <JFXTextField fx:id="prenomTxt" focusColor="#a1d8cb" labelFloat="true" layoutX="34.0" layoutY="214.0" prefWidth="200.0" promptText="Prénom" styleClass="txt" unFocusColor="#B4B4B4" AnchorPane.topAnchor="220.0" />
+      <JFXPasswordField fx:id="mdpTxt" focusColor="#a1d8cb" labelFloat="true" layoutX="34.0" layoutY="79.0" prefWidth="200.0" promptText="Mot de passe*" styleClass="txt" unFocusColor="#B4B4B4" AnchorPane.topAnchor="70.0" />
+      <JFXPasswordField fx:id="repmdpTxt" focusColor="#a1d8cb" labelFloat="true" layoutX="34.0" layoutY="117.0" prefWidth="200.0" promptText="Répéter le mot de passe*" styleClass="txt" unFocusColor="#B4B4B4" AnchorPane.topAnchor="120.0" />
+      <JFXTextField fx:id="emailTxt" focusColor="#a1d8cb" labelFloat="true" layoutX="34.0" layoutY="278.0" prefWidth="200.0" promptText="Email" styleClass="txt" unFocusColor="#B4B4B4" AnchorPane.topAnchor="270.0" />
+      <JFXButton layoutX="153.0" layoutY="312.0" onAction="#confirmer" text="S'inscrire">
+         <styleClass>
+            <String fx:value="charcoalB" />
+            <String fx:value="menu-btn" />
+         </styleClass></JFXButton>
       <JFXButton contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="22.0" layoutY="305.0" onAction="#backLogin" prefHeight="26.0" prefWidth="39.0" text="Back">
          <graphic>
             <ImageView fitHeight="29.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">

@@ -10,112 +10,81 @@ and open the template in the editor.
 
 /*BACKGROUNDS BASED ON COLOURS*/
 
-.lemonBckg{
-    -fx-background-color:#f4e5ba ;
+.daquaB{
+    -fx-background-color:#488a99 ;
 }
 
-.smokyBckg{
-    -fx-background-color:#0f0f0f ;
+.goldB{
+    -fx-background-color:#DBAE58 ;
 }
 
-.platBckg {
-    -fx-background-color: #e5e5e5;
+.charcoalB {
+    -fx-background-color:#36454f;
 }
 
-.blueBox{
-    -fx-background-color:#a1d8cb ;
+.greyB{
+    -fx-background-color:#B4B4B4 ;
     
 }
 
-/*TOPMENU STYLE : LE MENU HAUT DES FENETRES*/
-
-.topXMin{
-    -fx-background-color:#f4e5ba;
-    -fx-text-fill:#0f0f0f;
-}
-
-.topXMin:hover{
-    -fx-background-color:#a1d8cb;
-    -fx-text-fill:black;
-}
-
-.topBtn{
-    
-}
-
-.topBanner{
-    -fx-text-fill: #5da187;
-    -fx-font-size:16px;
-    -fx-font-weight:bolder;
-    -fx-font-style:italic;
-}
 
 /*MENU STYLE : LE MENU GAUCHE DES FENETRES*/
 
 
-.menuBtn{
-    -fx-background-color:#0f0f0f ;
-    -fx-text-fill:#e5e5e5;
+.menu-btn{
+    -fx-text-fill:lightgrey;
     -fx-font-size:13px;
     -fx-font-weight:bold;
 }
 
-.menuBtn:hover{
-    -fx-background-color:#2f2f2f ;
-    -fx-text-fill:f4e5ba;
+.menu-btn:hover{
+    -fx-text-fill:white;
+    -fx-font-size:13px;
+    -fx-font-weight:bold;
 }
 
-.menuBorder{
-    
+.username-label{
+    -fx-text-fill:lightgrey;
+    -fx-font-size:14px;
+    -fx-font-weight:bold;
+}
+
+.app-label{
+    -fx-text-fill:#DBAE58;
+    -fx-font-size:16px;
+    -fx-font-weight:bolder;
+    -fx-font-style:italic;  
 }
 
 /*CENTER STYLE : LE CONTENU DES FENETRES*/
 
-
-.centerLabel {
-    -fx-text-fill:#0f0f0f;
-    -fx-font-size:13px;
-    -fx-font-style: italic ;
-    -fon-font-family:Times;
+.ajoutBtn{
+    -fx-background-color:#488a99;
+    -fx-text-fill: white;
+    -fx-font-size:14px;
 }
-
-.centerText {
-    -fx-font-size:15px;
-}
-
-.centerBorder{
-    
-}
-
-.centerBtn{
-    -fx-background-color: #5da187;
-    -fx-text-fill:#e5e5e5 ;
-}
-
-.centerBtn:hover{
-    -fx-background-color:#a1d8cb ;
-    -fx-text-fill:white;
-}
-
-
-
-.dashBtn {
-    
+.ajoutBtn:hover{
+    -fx-background-color:#36454f;
 }
 
 /*LOGIN STOCKY */
 
+.welcome{
+    -fx-text-fill:#487a99;
+    -fx-font-weight:bold;
+}
+
 .STOCK {
-    -fx-text-fill:#5da187 ;
-    -fx-font-size:40px;
+    -fx-text-fill:#DBAE58 ;
+    -fx-font-size:80px;
     -fx-font-style:italic;
     -fx-font-weight:bold;
     
 }
 
 .STOCKy {
-    -fx-text-fill:#5da187;
-    -fx-font-size:30px;
+    -fx-text-fill:#DBAE58;
+    -fx-font-size:70px;
 }
 
 .createUser {
@@ -125,17 +94,21 @@ and open the template in the editor.
 }
 
 .txt {
-    -fx-text-fill:#5da187;
+    -fx-text-fill:whitesmoke;
 }
 
 .btn {
     -fx-background-color:#5da187 ;
 }
 
-.removeHover:hover{
-    
-}
-
 .validateTxt{
     -fx-text-fill : red;
+}
+
+.x-btn:hover{
+    -fx-background-color: lightcoral;
+}
+
+.minus-btn:hover{
+    -fx-background-color: lightcoral;
 }

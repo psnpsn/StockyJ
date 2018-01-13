@@ -64,14 +64,14 @@ public class loginSignUpController {
             //  Create User Profile with informations
             UserProfile userProfile = new UserProfile();
             userProfile.setNom(nom);
+            userProfile.setRole('0');
             userProfile.setPrenom(prenom);
             userProfile.setEmail(email);
             userProfile.setCreatedOn(LocalDateTime.now());
             userProfile.setLastLogin(LocalDateTime.now());
             userProfile.setUser(user);
-            
+            user.setUserProfile(userProfile);
             userService.create(user);
-            userProfileService.create(userProfile);
         }
         
     }

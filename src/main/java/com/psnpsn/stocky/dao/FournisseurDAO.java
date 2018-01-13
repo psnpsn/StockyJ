@@ -8,9 +8,10 @@ package com.psnpsn.stocky.dao;
 import com.psnpsn.stocky.model.Fournisseur;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javax.persistence.TypedQuery;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -21,45 +22,38 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class FournisseurDAO implements GenericDAO<Fournisseur> {
     
-    @Autowired
-    private SessionFactory sessionFactory;
+    @PersistenceContext
+   private EntityManager em;
+
 
     @Override
     public boolean create(Fournisseur instance) {
-        sessionFactory.getCurrentSession().save(instance);
+        em.persist(instance);
         return true;
     }
 
     @Override
     public ObservableList<Fournisseur> getAll() {
-        @SuppressWarnings("unchecked")
-        TypedQuery<Fournisseur> query=sessionFactory.getCurrentSession().createQuery("from Fournisseur");
-        ObservableList<Fournisseur> list = FXCollections.observableArrayList(query.getResultList());
+        CriteriaQuery<Fournisseur> criteriaQuery = em.getCriteriaBuilder().createQuery(Fournisseur.class);
+      @SuppressWarnings("unused")
+      Root<Fournisseur> root = criteriaQuery.from(Fournisseur.class);
+      ObservableList<Fournisseur> list = FXCollections.observableArrayList(em.createQuery(criteriaQuery).getResultList());
       return list;
     }
 
     @Override   
     public Fournisseur find(Integer id) {
-        @SuppressWarnings("unchecked")
-        TypedQuery<Fournisseur> query=sessionFactory.getCurrentSession().createQuery("from Fournisseur f where ID_F = :id");
-        query.setParameter("id",id);
-        Fournisseur fourn = query.getSingleResult();
-        return fourn;
+        return em.find(Fournisseur.class, id);
     }
 
     @Override
     public void delete(Integer id) {
-        @SuppressWarnings("unchecked")
-        TypedQuery<Fournisseur> query=sessionFactory.getCurrentSession().createQuery("DELETE from Fournisseur WHERE ID_F = :id");
-        query.setParameter("id",id);
-        query.executeUpdate();
-        
-        
+        em.remove(id);
     }
 
     @Override
     public boolean update(Fournisseur instance) {
-        sessionFactory.getCurrentSession().saveOrUpdate(instance);
+        em.merge(instance);
         return true;
     }
     

@@ -9,7 +9,9 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import com.psnpsn.stocky.MainApp;
+import com.psnpsn.stocky.model.User;
 import com.psnpsn.stocky.service.UserService;
+import com.psnpsn.stocky.utils.StageManager;
 import java.io.IOException;
 import java.net.URL;
 import java.util.logging.Level;
@@ -45,14 +47,18 @@ public class loginSignInController {
     void seConnecter(ActionEvent event) {
         String login = usrTxt.getText();
         char[] password = pwTxt.getText().toCharArray();
-        
-        if(usrService.checkLogin(login, password)>=0){
+        User user=usrService.checkLogin(login, password);
+        if(user!=null){
             errorMsg.setVisible(false);
-            MainApp.stager.Load("dashboard");
+            StageManager stager = StageManager.getStageManager();
+            stager.setUser(user);
+            System.out.println("User: "+stager.getUsername());
+            System.out.println("Role: "+stager.getRole());
+            stager.Dashboard();
         }
         else{
             errorMsg.setVisible(true);
-            errorMsg.setText("Login ou mot de passe inconnues");
+            errorMsg.setText("Login ou mot de passe incorrecte!");
             System.out.println("USER DOESNT EXIST");
         }
         

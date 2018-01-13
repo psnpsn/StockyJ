@@ -6,13 +6,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="275.0" styleClass="blueBox" stylesheets="@../styles/lightStyle.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.psnpsn.stocky.controller.loginSignInController">
+<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="275.0" styleClass="daquaB" stylesheets="@../styles/lightStyle.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.psnpsn.stocky.controller.loginSignInController">
    <children>
-      <JFXTextField fx:id="usrTxt" focusColor="#a1d8cb" labelFloat="true" layoutX="20.0" layoutY="100.0" prefHeight="26.0" prefWidth="233.0" promptText="Utilisateur" styleClass="txt" unFocusColor="#5da187" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="100.0" />
-      <JFXPasswordField fx:id="pwTxt" focusColor="#a1d8cb" labelFloat="true" layoutX="20.0" layoutY="150.0" prefHeight="26.0" prefWidth="233.0" promptText="Mot de passe" styleClass="txt" unFocusColor="#5da187" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="150.0" />
-      <JFXButton fx:id="loginBtn" layoutX="61.0" layoutY="200.0" onAction="#seConnecter" prefHeight="35.0" prefWidth="87.0" styleClass="btn" text="LOGIN" textFill="WHITE" AnchorPane.leftAnchor="61.0" AnchorPane.topAnchor="200.0" />
+      <JFXTextField fx:id="usrTxt" focusColor="#a1d8cb" labelFloat="true" layoutX="20.0" layoutY="100.0" prefHeight="26.0" prefWidth="233.0" promptText="Utilisateur" styleClass="txt" unFocusColor="#b4b4b4" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="100.0" />
+      <JFXPasswordField fx:id="pwTxt" focusColor="#a1d8cb" labelFloat="true" layoutX="20.0" layoutY="150.0" prefHeight="26.0" prefWidth="233.0" promptText="Mot de passe" styleClass="txt" unFocusColor="#b4b4b4" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="150.0" />
+      <JFXButton fx:id="loginBtn" layoutX="61.0" layoutY="200.0" onAction="#seConnecter" prefHeight="35.0" prefWidth="87.0" styleClass="charcoalB" text="LOGIN" textFill="WHITE" AnchorPane.leftAnchor="61.0" AnchorPane.topAnchor="200.0" />
       <Label fx:id="errorMsg" layoutX="5.0" layoutY="250.0" prefHeight="16.0" prefWidth="263.0" text="Utilisateur ou mot de passe incorrecte." textFill="RED" visible="false" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="250.0" />
-      <JFXButton layoutX="156.0" layoutY="200.0" onAction="#signUp" prefHeight="36.0" prefWidth="99.0" styleClass="lemonBckg" text="Sign Up" AnchorPane.leftAnchor="156.0" AnchorPane.topAnchor="200.0" />
+      <JFXButton layoutX="156.0" layoutY="200.0" onAction="#signUp" prefHeight="36.0" prefWidth="99.0" styleClass="goldB" text="Sign Up" AnchorPane.leftAnchor="156.0" AnchorPane.topAnchor="200.0" />
       <Label layoutX="157.0" layoutY="185.0" styleClass="createUser" text="Créer un compte?" AnchorPane.leftAnchor="157.0" AnchorPane.topAnchor="185.0" />
    </children>
 </AnchorPane>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane onMouseDragged="#dragged" onMousePressed="#pressed" prefWidth="925.0" stylesheets="@../styles/lightStyle.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.psnpsn.stocky.controller.windowBarController">
+   <children>
+      <JFXButton alignment="TOP_CENTER" contentDisplay="TOP" layoutX="865.0" layoutY="1.0" onAction="#minimizeApp" prefHeight="20.0" prefWidth="30.0" styleClass="minus-btn" text="-" />
+      <JFXButton layoutX="895.0" layoutY="1.0" onAction="#closeApp" prefHeight="20.0" prefWidth="30.0" styleClass="x-btn" text="X" />
+   </children>
+</AnchorPane>

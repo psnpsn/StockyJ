@@ -6,6 +6,7 @@
 package com.psnpsn.stocky.utils;
 
 import com.psnpsn.stocky.MainApp;
+import com.psnpsn.stocky.model.User;
 import com.psnpsn.stocky.model.UserProfile;
 import java.io.IOException;
 import java.net.URL;
@@ -22,48 +23,50 @@ import javafx.scene.layout.VBox;
  */
 public class StageManager {
     
-    private static UserProfile user;
+    private static StageManager stager = new StageManager();
+    private User user;
+    BorderPane root= MainApp.getRoot();
     
-    
-    
-    public UserProfile getUser(){
-        return StageManager.user;
+    private StageManager() {
     }
     
-    public void setUser(UserProfile user){
-        StageManager.user=user;
+    public static StageManager getStageManager(){
+        return stager;
+    }
+    
+    public String getUsername(){
+        return this.user.getLogin();
+    }
+    
+    public int getRole(){
+        return this.user.getRole();
+    }
+    
+    public void setUser(User user){
+        this.user=user;
     }
     
     public void Load(String s){
         try {
-            BorderPane root= MainApp.getRoot();
-            
-            URL top = getClass().getResource("/fxml/topmenu.fxml");
-            VBox topmenu = FXMLLoader.load(top);
-            
             URL content = getClass().getResource("/fxml/"+s+".fxml");
             AnchorPane middle = FXMLLoader.load(content);
             
             root.setCenter(middle);
-            root.setTop(topmenu);
-            
+           
         } catch (IOException ex) {
             Logger.getLogger(StageManager.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
     public void Dashboard(){
-        BorderPane root= MainApp.getRoot();
         try {    
-            URL top = getClass().getResource("/fxml/topmenu.fxml");
-            VBox topmenu;
-       
-            topmenu = FXMLLoader.load(top);
+            URL menu = getClass().getResource("/fxml/menuAdmin.fxml");
+            AnchorPane left = FXMLLoader.load(menu);
             URL content = getClass().getResource("/fxml/produitList.fxml");
             AnchorPane middle = FXMLLoader.load(content);
             
             root.setCenter(middle);
-            root.setTop(topmenu);
+            root.setLeft(left);
             
         } catch (IOException ex) {
             Logger.getLogger(StageManager.class.getName()).log(Level.SEVERE, null, ex);
@@ -71,6 +74,18 @@ public class StageManager {
     }
     
     public void LoginScreen(){
-        
+        try {    
+            URL menu = getClass().getResource("/fxml/loginMenu.fxml");
+            AnchorPane left = FXMLLoader.load(menu);
+            URL content = getClass().getResource("/fxml/login.fxml");
+            AnchorPane middle = FXMLLoader.load(content);
+            
+            root.setCenter(middle);
+            root.setLeft(left);
+            
+        } catch (IOException ex) {
+            Logger.getLogger(StageManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        user = null;
     }
 }

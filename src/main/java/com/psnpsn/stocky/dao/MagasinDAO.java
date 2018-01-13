@@ -8,55 +8,52 @@ package com.psnpsn.stocky.dao;
 import com.psnpsn.stocky.model.Magasin;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javax.persistence.TypedQuery;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author psnpsn
  */
+
 @Repository
 public class MagasinDAO implements GenericDAO<Magasin> {
     
-    @Autowired
-    private SessionFactory sessionFactory;
+    @PersistenceContext
+   private EntityManager em;
+
 
     @Override
     public boolean create(Magasin instance) {
-        sessionFactory.getCurrentSession().save(instance);
+        em.persist(instance);
         return true;
     }
 
     @Override
     public ObservableList<Magasin> getAll() {
-        @SuppressWarnings("unchecked")
-        TypedQuery<Magasin> query=sessionFactory.getCurrentSession().createQuery("from Magasin");
-        ObservableList<Magasin> list = FXCollections.observableArrayList(query.getResultList());
+        CriteriaQuery<Magasin> criteriaQuery = em.getCriteriaBuilder().createQuery(Magasin.class);
+      @SuppressWarnings("unused")
+      Root<Magasin> root = criteriaQuery.from(Magasin.class);
+      ObservableList<Magasin> list = FXCollections.observableArrayList(em.createQuery(criteriaQuery).getResultList());
       return list;
     }
 
-    @Override
+    @Override   
     public Magasin find(Integer id) {
-        @SuppressWarnings("unchecked")
-        TypedQuery<Magasin> query=sessionFactory.getCurrentSession().createQuery("from Magasin where ID_MAG = :id");
-        query.setParameter("id",id);
-        Magasin mag = query.getSingleResult();
-        return mag;
+        return em.find(Magasin.class, id);
     }
 
     @Override
     public void delete(Integer id) {
-        @SuppressWarnings("unchecked")
-        TypedQuery<Magasin> query=sessionFactory.getCurrentSession().createQuery("DELETE from Magasin WHERE ID_MAG = :id");
-        query.setParameter("id",id);
-        query.executeUpdate();
+        em.remove(id);
     }
 
     @Override
     public boolean update(Magasin instance) {
-         sessionFactory.getCurrentSession().saveOrUpdate(instance);
+        em.merge(instance);
         return true;
     }
     
